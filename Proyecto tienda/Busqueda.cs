@@ -242,7 +242,7 @@ namespace Proyecto_tienda
             }
             else
             {
-                comando = "select Cod_Cliente,Num_Envio from envio_usuario  where Cod_Cliente  like '" + dato + "' OR Num_Envio like '" + dato + "' ";
+                comando = "select envio_usuario.Num_Envio,cliente.NOMBRE AS CLIENTE_NOMBRE,cliente.APELLIDO AS CLIENTE_APELLIDO,envio.Direccion_Envio as DIRECCION_ENVIO from cliente,envio_usuario,envio where  cliente.Cod_Cliente=envio_usuario.Cod_Cliente AND envio.Num_Envio=envio_usuario.Num_Envio AND ( envio_usuario.Num_Envio  like '" + dato + "' OR cliente.NOMBRE like '" + dato + "' OR cliente.APELLIDO like '"+dato+ "' OR envio.Direccion_Envio LIKE '"+dato+"') ORDER BY cliente.APELLIDO ";
             }
             return comando;
         }
