@@ -53,10 +53,8 @@ namespace Proyecto_tienda
             }
             catch (MySqlException ex)
             {
-                if (dato != "")
-                {
+                
                     MessageBox.Show("Ocurrio una exepcion de tipo: " + ex);
-                }
 
             }
             finally
@@ -84,12 +82,8 @@ namespace Proyecto_tienda
                 tabla_registro1.DataSource = tabla1;
 
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
-                if (dato != "")
-                {
-                    MessageBox.Show("Ocurrio una exepcion de tipo: " + ex);
-                }
                 MessageBox.Show("Ocurrio un error de tipo: " + ex);
 
             }
@@ -355,85 +349,6 @@ namespace Proyecto_tienda
         {
             string comand = txt_BUSCAR.Text;
             busqueda_Catalogo(comand);
-            infoimagen();
-            mostrarimen();
-        }
-        public bool IsNumeric(object Expression)
-
-        {
-
-            bool isNum;
-
-            double retNum;
-
-            isNum = Double.TryParse(Convert.ToString(Expression), System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum);
-
-            return isNum;
-
-        }
-        public void infoimagen()
-        {
-           
-            if(IsNumeric(txt_BUSCAR.Text)!=false)
-            {
-                conexion.Open();
-                string SQL = "SELECT Cod_Producto FROM CATALOGO WHERE Cod_Producto='" + txt_BUSCAR.Text + "';";
-                try
-                {
-                    MySqlCommand select = new MySqlCommand(SQL, conexion);
-                    MySqlDataAdapter reader1 = new MySqlDataAdapter();
-                    reader1.SelectCommand = select;
-                    DataTable tabla1 = new DataTable();
-                    reader1.Fill(tabla1);
-                    cod_cat.DataSource = tabla1;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrio un erro de tipo :" + ex);
-                }
-                finally
-                {
-                    conexion.Close();
-                }
-            }
-            
-        }
-        public void mostrarimen()
-        {
-            if (IsNumeric(txt_BUSCAR.Text) != false)
-            {
-                int cod_buscar = int.Parse(txt_BUSCAR.Text);
-                string sql1 = "select imagen,Cod_Producto from catalogo where Cod_Producto='" + cod_buscar + "';";
-
-                conexion.Open();
-                try
-                {
-                    MySqlCommand IMAGEN = new MySqlCommand(sql1, conexion);
-
-                    MySqlDataReader reader = IMAGEN.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        MemoryStream ms = new MemoryStream(Convert.ToByte(reader["imagen"]));
-                        Bitmap bm = new Bitmap(ms);
-                        picImagenmos.Image = bm;
-                        txt_BUSCAR.Text = reader["Cod_Producto"].ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontro un registro");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrio un error: " + ex);
-                }
-                finally
-                {
-                    conexion.Close();
-                }
-            }
-            
         }
 
         private void label1_Click(object sender, EventArgs e)

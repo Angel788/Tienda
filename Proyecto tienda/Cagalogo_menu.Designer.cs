@@ -74,8 +74,6 @@
             this.txt_color = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.picImagenmos = new System.Windows.Forms.PictureBox();
-            this.cod_cat = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_talla = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,8 +85,6 @@
             this.tabla_registro1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenmos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cod_cat)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cerrar)).BeginInit();
@@ -99,7 +95,7 @@
             // 
             // txt_Eliminar
             // 
-            this.txt_Eliminar.Location = new System.Drawing.Point(873, 685);
+            this.txt_Eliminar.Location = new System.Drawing.Point(267, 583);
             this.txt_Eliminar.Name = "txt_Eliminar";
             this.txt_Eliminar.Size = new System.Drawing.Size(270, 22);
             this.txt_Eliminar.TabIndex = 28;
@@ -107,7 +103,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(697, 688);
+            this.label10.Location = new System.Drawing.Point(91, 586);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 17);
             this.label10.TabIndex = 27;
@@ -149,7 +145,7 @@
             this.actualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
             this.actualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(92)))));
             this.actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.actualizar.Location = new System.Drawing.Point(700, 788);
+            this.actualizar.Location = new System.Drawing.Point(94, 686);
             this.actualizar.Name = "actualizar";
             this.actualizar.Size = new System.Drawing.Size(443, 34);
             this.actualizar.TabIndex = 22;
@@ -165,7 +161,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(92)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(700, 722);
+            this.button2.Location = new System.Drawing.Point(94, 620);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(443, 60);
             this.button2.TabIndex = 16;
@@ -516,28 +512,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // picImagenmos
-            // 
-            this.picImagenmos.Location = new System.Drawing.Point(397, 553);
-            this.picImagenmos.Name = "picImagenmos";
-            this.picImagenmos.Size = new System.Drawing.Size(288, 176);
-            this.picImagenmos.TabIndex = 29;
-            this.picImagenmos.TabStop = false;
-            // 
-            // cod_cat
-            // 
-            this.cod_cat.AllowUserToAddRows = false;
-            this.cod_cat.AllowUserToDeleteRows = false;
-            this.cod_cat.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.cod_cat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cod_cat.Location = new System.Drawing.Point(192, 554);
-            this.cod_cat.Name = "cod_cat";
-            this.cod_cat.ReadOnly = true;
-            this.cod_cat.RowHeadersWidth = 51;
-            this.cod_cat.RowTemplate.Height = 24;
-            this.cod_cat.Size = new System.Drawing.Size(199, 91);
-            this.cod_cat.TabIndex = 30;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
@@ -752,13 +726,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(1196, 846);
+            this.ClientSize = new System.Drawing.Size(1196, 732);
             this.Controls.Add(this.tabla_registro1);
             this.Controls.Add(this.Tabla_producto);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.cod_cat);
-            this.Controls.Add(this.picImagenmos);
             this.Controls.Add(this.txt_Eliminar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Buscar_catalogo);
@@ -778,8 +750,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenmos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cod_cat)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -828,8 +798,6 @@
         private System.Windows.Forms.PictureBox picImagen;
         private System.Windows.Forms.Label precio;
         public System.Windows.Forms.TextBox txt_precio;
-        private System.Windows.Forms.PictureBox picImagenmos;
-        private System.Windows.Forms.DataGridView cod_cat;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
