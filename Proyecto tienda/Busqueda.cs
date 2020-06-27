@@ -91,7 +91,7 @@ namespace Proyecto_tienda
             }
             else
             {
-                comando = "select PRODUCTO.Nom_Modelo as Modelo,CATALOGO.ID,CATALOGO.Cod_Producto,CATALOGO.Talla,CATALOGO.Color,CATALOGO.Material,CATALOGO.CATEGORIA,CATALOGO.Precio from CATALOGO,PRODUCTO WHERE  CATALOGO.Cod_Producto=PRODUCTO.Cod_Producto AND (PRODUCTO.Marcha like '" + dato+"' OR CATALOGO.Cod_Producto like '" + dato + "' OR CATALOGO.Talla LIKE '" + dato + "' OR CATALOGO.Color  like '" + dato + "' OR CATALOGO.Material  like '" + dato + "' OR CATALOGO.CATEGORIA  like '" + dato + "' OR CATALOGO.Precio   like '" + dato + "' OR CATALOGO.ID LIKE '"+dato+"') order by PRODUCTO.Marcha;";
+                comando = "select PRODUCTO.Nom_Modelo as Modelo,CATALOGO.ID,CATALOGO.Cod_Producto,CATALOGO.Talla,CATALOGO.Color,CATALOGO.Material,CATALOGO.CATEGORIA,CATALOGO.Precio from CATALOGO,PRODUCTO WHERE  CATALOGO.Cod_Producto=PRODUCTO.Cod_Producto AND (PRODUCTO.Nom_Modelo like '" + dato+"' OR CATALOGO.Cod_Producto like '" + dato + "' OR CATALOGO.Talla LIKE '" + dato + "' OR CATALOGO.Color  like '" + dato + "' OR CATALOGO.Material  like '" + dato + "' OR CATALOGO.CATEGORIA  like '" + dato + "' OR CATALOGO.Precio   like '" + dato + "' OR CATALOGO.ID LIKE '"+dato+"') order by PRODUCTO.Marcha;";
             }
             
 
