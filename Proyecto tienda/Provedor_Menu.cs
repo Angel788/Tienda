@@ -225,7 +225,7 @@ namespace Proyecto_tienda
             }
             finally
             {
-                conexion.Clone();
+                conexion.Close();
             }
                
         }
