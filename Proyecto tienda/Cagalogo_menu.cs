@@ -15,8 +15,8 @@ namespace Proyecto_tienda
 {
     public partial class Cagalogo_menu : Form
     {
-        MySqlConnection conexion = new MySqlConnection("Server = localhost; Database = tienda; Uid = root; Pwd = j3zuzv3;");
-        MySqlConnection MARCA = new MySqlConnection("Server = localhost; Database = marca; Uid = root; Pwd = j3zuzv3;");
+        MySqlConnection conexion = new MySqlConnection("Server = " + pasar_datos.server + "; Database = " + pasar_datos.BD + "; Uid = " + pasar_datos.user + "; Pwd = " + pasar_datos.pasword + ";");
+        
         private Boolean arrastrar;
         private Point pointMD;
         private Point pointFM;
