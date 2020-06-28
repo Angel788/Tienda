@@ -13,7 +13,7 @@ namespace Proyecto_tienda
 {
     public partial class Cliente_Menu : Form
     {
-        MySqlConnection conexion = new MySqlConnection("Server = " + pasar_datos.server + "; Database = " + pasar_datos.BD + "; Uid = " + pasar_datos.user + "; Pwd = j" + pasar_datos.pasword + ";");
+        MySqlConnection conexion = new MySqlConnection("Server = " + pasar_datos.server + "; Database = " + pasar_datos.BD + "; Uid = " + pasar_datos.user + "; Pwd = " + pasar_datos.pasword + ";");
         private Boolean arrastrar;
         private Point pointMD;
         private Point pointFM;
