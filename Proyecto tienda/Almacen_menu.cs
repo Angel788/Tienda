@@ -73,18 +73,6 @@ namespace Proyecto_tienda
         }
         public void CargarTablaStock(string dato)
         {
-            NumAlmacen confir = new NumAlmacen();
-            if(confir.IsNumeric(dato)==true)
-            {
-                CargarTablaStocktrue(dato);
-            }
-            else {
-                CargarTablaStockfalse(dato);
-            }
-            
-        }
-        private void CargarTablaStocktrue(string dato)
-        {
             AlmacenStock Pasar = new AlmacenStock();
             conexion.Open();
             try
@@ -105,28 +93,7 @@ namespace Proyecto_tienda
                 conexion.Close();
             }
         }
-        private void CargarTablaStockfalse(string dato)
-        {
-            AlmacenStock Pasar = new AlmacenStock();
-            conexion.Open();
-            try
-            {
-                MySqlCommand select = new MySqlCommand(Pasar.comando_stock(dato), conexion);
-                MySqlDataAdapter reader1 = new MySqlDataAdapter();
-                reader1.SelectCommand = select;
-                DataTable tabla1 = new DataTable();
-                reader1.Fill(tabla1);
-                tabla_stock.DataSource = tabla1;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Ocurrio una exepcion de tipo: " + ex);
-            }
-            finally
-            {
-                conexion.Close();
-            }
-        }
+       
         public void Estado()
         {
             CONEXION_ESTADOS con = new CONEXION_ESTADOS();
@@ -244,10 +211,6 @@ namespace Proyecto_tienda
             string cmd = txt_BuscarStock.Text;
             int codprod = int.Parse(txt_BuscarStock.Text);
             NumAlmacen almacen = new NumAlmacen();
-            if(almacen.IsNumeric(codprod)==true)
-            {
-                MessageBox.Show("Es un numero");
-            }
             CargarTablaStock(cmd);
         }
 
@@ -558,13 +521,7 @@ namespace Proyecto_tienda
         {
             
         }
-        public bool IsNumeric(object Expression)
-        {
-            bool isNum;
-            double retNum;
-            isNum = Double.TryParse(Convert.ToString(Expression), System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum);
-            return isNum;
-        }
+        
     }
     
 }
