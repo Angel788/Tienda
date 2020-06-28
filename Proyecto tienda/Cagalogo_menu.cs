@@ -437,7 +437,7 @@ namespace Proyecto_tienda
                 conexion.Close();
             }
         }
-        private string cm2(int CodProd, float talla, string color, string Material,string cataegoria, float precio, byte[] aByte)=> " update producto set Talla='" + talla + "',Color='" + color+ "',Material='" + Material + "',CATEGORIA='" + cataegoria+ "',Precio'" + precio + "',Imagen'" + aByte + "' where Cod_Producto= '" + CodProd + "'";
+        private string cm2(int CodProd, float talla, string color, string Material,string cataegoria, float precio, byte[] aByte)=> " update catalogo set Talla='" + talla + "',Color='" + color+ "',Material='" + Material + "',CATEGORIA='" + cataegoria+ "',Precio='" + precio + "',Imagen='" + aByte + "' where Cod_Producto= '" + CodProd + "'";
         public void ex2(int CodProd, float talla, string color, string Material, string cataegoria, float precio, byte[] aByte)
         {
             conexion.Open();
